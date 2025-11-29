@@ -23,9 +23,9 @@ $(function () {
         $this.prop("disabled", true);
         $this.text("Sending...");
         
-        // Submit to Formspree
+        // Submit to PHP backend
         $.ajax({
-            url: "https://formspree.io/f/xbjnkwbv",
+            url: "mail/contact.php",
             type: "POST",
             data: {
                 name: name,
@@ -33,18 +33,34 @@ $(function () {
                 subject: subject,
                 message: message
             },
-            dataType: "json",
             success: function(response) {
-                showMessage("Thank you! Your message has been sent successfully.", "success");
+                showMessage("Thank you! Your message has been sent successfully to vadlaakhila122@gmail.com.", "success");
                 $('#contactForm')[0].reset();
             },
             error: function(xhr, status, error) {
-                if (xhr.status === 0) {
-                    showMessage("Thank you! Your message has been sent successfully.", "success");
-                    $('#contactForm')[0].reset();
-                } else {
-                    showMessage("Sorry " + name + ", there was an error sending your message. Please try again later!", "danger");
-                }
+                // Fallback to Formspree if PHP fails (for static hosting)
+                $.ajax({
+                    url: "https://formspree.io/f/xbjnkwbv",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message,
+                        _replyto: email
+                    },
+                    dataType: "json",
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    success: function(response) {
+                        showMessage("Thank you! Your message has been sent successfully.", "success");
+                        $('#contactForm')[0].reset();
+                    },
+                    error: function() {
+                        showMessage("Sorry " + name + ", there was an error sending your message. Please email me directly at vadlaakhila122@gmail.com", "danger");
+                    }
+                });
             },
             complete: function() {
                 setTimeout(function() {

@@ -23,6 +23,19 @@
 
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        
+        <!-- Custom Styles for Project Cards -->
+        <style>
+            .card:hover img {
+                transform: scale(1.1);
+            }
+            .card:hover .position-absolute[style*="background: rgba"] {
+                opacity: 1 !important;
+            }
+            .card .position-absolute[style*="background: rgba"] {
+                cursor: pointer;
+            }
+        </style>
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -273,19 +286,19 @@
                                     <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
                                     <h5 class="mb-1" style="font-size: 1.3rem;">Bachelor of Technology in Computer Science Engineering</h5>
                                     <p class="mb-2" style="font-size: 1.2rem;">Nalla Malla Reddy Engineering College, Hyderabad, TG | <small>Nov 2021 - Jun 2025</small></p>
-                                    <p style="font-size: 1.2rem;">Cumulative GPA: 8.45/10.0. Currently pursuing B.Tech with focus on computer science fundamentals, full-stack development, and software engineering.</p>
+                                    <p style="font-size: 1.2rem;">Cumulative GPA: 8.45/10.0.<br> Currently graduated with B.Tech with focus on computer science fundamentals, full-stack development, and software engineering.</p>
                                 </div>
                                 <div class="position-relative mb-4">
                                     <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
                                     <h5 class="mb-1" style="font-size: 1.3rem;">Intermediate: MPC (Maths, Physics & Chemistry)</h5>
                                     <p class="mb-2" style="font-size: 1.2rem;">MJPTBCWRJC, Girls (E.M Residential College), Nagarkurnool, TG | <small>Jul 2019 - Mar 2021</small></p>
-                                    <p style="font-size: 1.2rem;">Percentage: 910/1000 (91%). Completed intermediate education with Mathematics, Physics, and Chemistry as major subjects.</p>
+                                    <p style="font-size: 1.2rem;">Percentage: 910/1000 (91%). <br> Completed intermediate education with Mathematics, Physics, and Chemistry as major subjects.</p>
                                 </div>
                                 <div class="position-relative mb-4">
                                     <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
                                     <h5 class="mb-1" style="font-size: 1.3rem;">Secondary School Certification (Class X)</h5>
                                     <p class="mb-2" style="font-size: 1.2rem;">Brilliant Grammar High School (E.M), Narayanpet, TG | <small>May 2019</small></p>
-                                    <p style="font-size: 1.2rem;">GPA: 9.2/10.0. Completed secondary school education with distinction, laying strong foundation in mathematics and sciences.</p>
+                                    <p style="font-size: 1.2rem;">GPA: 9.2/10.0. <br> Completed secondary school education with distinction, laying strong foundation in mathematics and sciences.</p>
                                 </div>
                             </div>
                         </div>
@@ -323,23 +336,50 @@
                             <h2 class="title position-relative pb-2 mb-4" style="font-size: 2.5rem;">Projects</h2>
                         </div>
                         <div class="col-12">
-                            <div class="border-left border-primary pt-2 pl-4 ml-2">
-                                <div class="position-relative mb-4">
-                                    <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                                    <h5 class="mb-1" style="font-size: 1.3rem;">MedBridge – Diagnosis & Doctor Referral System</h5>
-                                    <p class="mb-2" style="font-size: 1.2rem;"><span class="badge badge-primary">SIH 2024</span></p>
-                                    <p style="font-size: 1.2rem;">• Built a web platform enabling users to input symptoms and receive doctor recommendations using real-time data via APIs
-                                    <br>• Implemented online/offline appointment booking, personalized diet charts, and automated reminders
-                                    <br>• <strong>Tech Stack:</strong> HTML, CSS, JavaScript, SQL, PHP, API Integrations</p>
+                            <div class="row">
+                                <!-- MedBridge Project -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 shadow-sm" style="border: none; overflow: hidden;">
+                                        <div class="position-relative" style="height: 300px; overflow: hidden;">
+                                            <img class="card-img-top" src="img/project.png" alt="MedBridge Project" style="height: 100%; object-fit: cover; transition: transform 0.3s;">
+                                            <div class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0, 123, 255, 0.9); top: 0; left: 0; opacity: 0; transition: opacity 0.3s;">
+                                                <div class="text-white text-center p-4">
+                                                    <h4 class="mb-3"><strong>MedBridge</strong></h4>
+                                                    <p class="mb-2" style="font-size: 1rem;">• Built a web platform enabling users to input symptoms and receive doctor recommendations using real-time data via APIs</p>
+                                                    <p class="mb-2" style="font-size: 1rem;">• Implemented online/offline appointment booking, personalized diet charts, and automated reminders</p>
+                                                    <p class="mb-0" style="font-size: 1rem;"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, SQL, PHP, API Integrations</p>
+                                                    <span class="badge badge-light mt-2">SIH 2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">MedBridge – Diagnosis & Doctor Referral System</h5>
+                                            <p class="card-text" style="font-size: 1.1rem;">A comprehensive healthcare platform for symptom-based doctor referrals and appointment management.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="position-relative mb-4">
-                                    <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                                    <h5 class="mb-1" style="font-size: 1.3rem;">Cardio Care – Heart Monitoring & Emergency Alert Platform</h5>
-                                    <p class="mb-2" style="font-size: 1.2rem;"><span class="badge badge-primary">SIH 2023</span></p>
-                                    <p style="font-size: 1.2rem;">• Developed a mobile + web platform integrated with sensors/smartwatches for real-time heart rate monitoring
-                                    <br>• Implemented algorithms to detect irregularities and trigger instant emergency alerts to caregivers
-                                    <br>• Improved early detection accuracy and received positive feedback from evaluators
-                                    <br>• <strong>Tech Stack:</strong> HTML, CSS, JavaScript, Sensor APIs</p>
+                                
+                                <!-- Cardio Care Project -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 shadow-sm" style="border: none; overflow: hidden;">
+                                        <div class="position-relative" style="height: 300px; overflow: hidden;">
+                                            <img class="card-img-top" src="img/project.png" alt="Cardio Care Project" style="height: 100%; object-fit: cover; transition: transform 0.3s;">
+                                            <div class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(220, 53, 69, 0.9); top: 0; left: 0; opacity: 0; transition: opacity 0.3s;">
+                                                <div class="text-white text-center p-4">
+                                                    <h4 class="mb-3"><strong>Cardio Care</strong></h4>
+                                                    <p class="mb-2" style="font-size: 1rem;">• Developed a mobile + web platform integrated with sensors/smartwatches for real-time heart rate monitoring</p>
+                                                    <p class="mb-2" style="font-size: 1rem;">• Implemented algorithms to detect irregularities and trigger instant emergency alerts to caregivers</p>
+                                                    <p class="mb-2" style="font-size: 1rem;">• Improved early detection accuracy and received positive feedback from evaluators</p>
+                                                    <p class="mb-0" style="font-size: 1rem;"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Sensor APIs</p>
+                                                    <span class="badge badge-light mt-2">SIH 2023</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-danger">Cardio Care – Heart Monitoring & Emergency Alert Platform</h5>
+                                            <p class="card-text" style="font-size: 1.1rem;">An innovative health monitoring system with real-time heart rate tracking and emergency alert capabilities.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -458,6 +498,34 @@
                                 </div>
                             </div>
                             <div class="row portfolio-container">
+                                <div class="col-md-6 mb-4 portfolio-item third">
+                                    <div class="position-relative overflow-hidden mb-2">
+                                        <img class="img-fluid w-100" src="img/project.png" alt="MedBridge Project" style="max-height: 300px; object-fit: cover;">
+                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                            <a href="img/project.png" data-lightbox="portfolio" data-title="MedBridge – Diagnosis & Doctor Referral System (SIH 2024) - Built a web platform enabling users to input symptoms and receive doctor recommendations using real-time data via APIs. Tech Stack: HTML, CSS, JavaScript, SQL, PHP, API Integrations">
+                                                <i class="fa fa-4x fa-plus text-white"></i>
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute bottom-0 left-0 right-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                            <h5 class="text-white mb-1">MedBridge</h5>
+                                            <p class="text-white mb-0" style="font-size: 0.9rem;">SIH 2024 - Healthcare Platform</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 portfolio-item third">
+                                    <div class="position-relative overflow-hidden mb-2">
+                                        <img class="img-fluid w-100" src="img/project.png" alt="Cardio Care Project" style="max-height: 300px; object-fit: cover;">
+                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                            <a href="img/project.png" data-lightbox="portfolio" data-title="Cardio Care – Heart Monitoring & Emergency Alert Platform (SIH 2023) - Developed a mobile + web platform integrated with sensors/smartwatches for real-time heart rate monitoring. Tech Stack: HTML, CSS, JavaScript, Sensor APIs">
+                                                <i class="fa fa-4x fa-plus text-white"></i>
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute bottom-0 left-0 right-0 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                            <h5 class="text-white mb-1">Cardio Care</h5>
+                                            <p class="text-white mb-0" style="font-size: 0.9rem;">SIH 2023 - Health Monitoring</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-6 mb-4 portfolio-item first">
                                     <div class="position-relative overflow-hidden mb-2">
                                         <img class="img-fluid w-100" src="img/course-2.png" alt="" style="max-height: 300px; object-fit: cover;">
@@ -483,16 +551,6 @@
                                         <img class="img-fluid w-100" src="img/course-1.png" alt="" style="max-height: 300px; object-fit: cover;">
                                         <div class="portfolio-btn d-flex align-items-center justify-content-center">
                                             <a href="img/course-1.png" data-lightbox="portfolio">
-                                                <i class="fa fa-4x fa-plus text-white"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item third">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="img/project.png" alt="https://vakhila11.github.io/SymptoCare/" style="max-height: 300px; object-fit: cover;">
-                                        <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                            <a href="img/project.png" data-lightbox="portfolio">
                                                 <i class="fa fa-4x fa-plus text-white"></i>
                                             </a>
                                         </div>
@@ -579,7 +637,7 @@
                         </div>
                         <div class="col-12">
                             <div class="contact-form">
-                                <form id="contactForm" action="https://formspree.io/f/xbjnkwbv" method="POST">
+                                <form id="contactForm" action="mail/contact.php" method="POST">
                                     <div class="form-row">
                                         <div class="control-group col-sm-6 mb-4">
                                             <input type="text" class="form-control p-4" id="name" name="name" placeholder="Your Name"
