@@ -26,14 +26,23 @@
         
         <!-- Custom Styles for Project Cards -->
         <style>
-            .card:hover img {
-                transform: scale(1.1);
+            /* Project Card Hover Effects */
+            .container-fluid .row .col-md-6 .position-relative:hover img {
+                transform: scale(1.15);
             }
-            .card:hover .position-absolute[style*="background: rgba"] {
+            .container-fluid .row .col-md-6 .position-relative:hover .position-absolute[style*="background: linear-gradient"] {
                 opacity: 1 !important;
             }
-            .card .position-absolute[style*="background: rgba"] {
+            .container-fluid .row .col-md-6 .position-relative {
                 cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+            .container-fluid .row .col-md-6 .position-relative:hover {
+                transform: translateY(-5px);
+            }
+            /* Smooth transitions for project images */
+            .container-fluid .row .col-md-6 img {
+                transition: transform 0.5s ease;
             }
         </style>
     </head>
@@ -339,46 +348,53 @@
                             <div class="row">
                                 <!-- MedBridge Project -->
                                 <div class="col-md-6 mb-4">
-                                    <div class="card h-100 shadow-sm" style="border: none; overflow: hidden;">
-                                        <div class="position-relative" style="height: 300px; overflow: hidden;">
-                                            <img class="card-img-top" src="img/project.png" alt="MedBridge Project" style="height: 100%; object-fit: cover; transition: transform 0.3s;">
-                                            <div class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0, 123, 255, 0.9); top: 0; left: 0; opacity: 0; transition: opacity 0.3s;">
-                                                <div class="text-white text-center p-4">
-                                                    <h4 class="mb-3"><strong>MedBridge</strong></h4>
-                                                    <p class="mb-2" style="font-size: 1rem;">• Built a web platform enabling users to input symptoms and receive doctor recommendations using real-time data via APIs</p>
-                                                    <p class="mb-2" style="font-size: 1rem;">• Implemented online/offline appointment booking, personalized diet charts, and automated reminders</p>
-                                                    <p class="mb-0" style="font-size: 1rem;"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, SQL, PHP, API Integrations</p>
-                                                    <span class="badge badge-light mt-2">SIH 2024</span>
+                                    <div class="position-relative overflow-hidden mb-3" style="height: 350px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                        <img class="img-fluid w-100 h-100" src="img/Project1.png" alt="MedBridge Project" style="object-fit: cover; transition: transform 0.5s ease;">
+                                        <div class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center" style="background: linear-gradient(135deg, rgba(0, 123, 255, 0.95) 0%, rgba(0, 86, 179, 0.95) 100%); top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; padding: 2rem;">
+                                            <i class="fa fa-3x fa-heartbeat text-white mb-3"></i>
+                                            <h3 class="text-white mb-3" style="font-size: 1.8rem; font-weight: bold;">MedBridge</h3>
+                                            <div class="text-white text-left" style="font-size: 1.1rem; line-height: 1.8;">
+                                                <p class="mb-2"><i class="fa fa-check-circle mr-2"></i>Intelligent symptom analysis with AI-powered doctor recommendations</p>
+                                                <p class="mb-2"><i class="fa fa-check-circle mr-2"></i>Seamless online/offline appointment booking system</p>
+                                                <p class="mb-2"><i class="fa fa-check-circle mr-2"></i>Personalized diet charts and automated health reminders</p>
+                                                <p class="mb-3"><i class="fa fa-check-circle mr-2"></i>Real-time API integrations for accurate medical data</p>
+                                                <div class="text-center">
+                                                    <span class="badge badge-light px-3 py-2" style="font-size: 1rem;">SIH 2024</span>
+                                                    <p class="mt-3 mb-0" style="font-size: 0.95rem; opacity: 0.9;"><strong>Tech:</strong> HTML5, CSS3, JavaScript, SQL, PHP, REST APIs</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title text-primary">MedBridge – Diagnosis & Doctor Referral System</h5>
-                                            <p class="card-text" style="font-size: 1.1rem;">A comprehensive healthcare platform for symptom-based doctor referrals and appointment management.</p>
-                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 class="text-primary mb-2" style="font-size: 1.5rem; font-weight: 600;">MedBridge</h4>
+                                        <h5 class="mb-3" style="font-size: 1.3rem; color: #333;">Diagnosis & Doctor Referral System</h5>
+                                        <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">A comprehensive healthcare platform revolutionizing patient care through intelligent symptom analysis, seamless appointment management, and personalized health solutions. Selected for Smart India Hackathon 2024.</p>
                                     </div>
                                 </div>
                                 
                                 <!-- Cardio Care Project -->
                                 <div class="col-md-6 mb-4">
-                                    <div class="card h-100 shadow-sm" style="border: none; overflow: hidden;">
-                                        <div class="position-relative" style="height: 300px; overflow: hidden;">
-                                            <img class="card-img-top" src="img/project.png" alt="Cardio Care Project" style="height: 100%; object-fit: cover; transition: transform 0.3s;">
-                                            <div class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(220, 53, 69, 0.9); top: 0; left: 0; opacity: 0; transition: opacity 0.3s;">
-                                                <div class="text-white text-center p-4">
-                                                    <h4 class="mb-3"><strong>Cardio Care</strong></h4>
-                                                    <p class="mb-2" style="font-size: 1rem;">• Developed a mobile + web platform integrated with sensors/smartwatches for real-time heart rate monitoring</p>
-                                                    <p class="mb-2" style="font-size: 1rem;">• Implemented algorithms to detect irregularities and trigger instant emergency alerts to caregivers</p>
-                                                    <p class="mb-2" style="font-size: 1rem;">• Improved early detection accuracy and received positive feedback from evaluators</p>
-                                                    <p class="mb-0" style="font-size: 1rem;"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Sensor APIs</p>
-                                                    <span class="badge badge-light mt-2">SIH 2023</span>
+                                    <div class="position-relative overflow-hidden mb-3" style="height: 350px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                        <img class="img-fluid w-100 h-100" src="img/project.png" alt="Cardio Care Project" style="object-fit: cover; transition: transform 0.5s ease;">
+                                        <div class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center" style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.95) 0%, rgba(181, 32, 48, 0.95) 100%); top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; padding: 2rem;">
+                                            <i class="fa fa-3x fa-heartbeat text-white mb-3"></i>
+                                            <h3 class="text-white mb-3" style="font-size: 1.8rem; font-weight: bold;">Cardio Care</h3>
+                                            <div class="text-white text-left" style="font-size: 1.1rem; line-height: 1.8;">
+                                                <p class="mb-2"><i class="fa fa-check-circle mr-2"></i>Real-time heart rate monitoring via IoT sensors & smartwatches</p>
+                                                <p class="mb-2"><i class="fa fa-check-circle mr-2"></i>Advanced algorithms for cardiac irregularity detection</p>
+                                                <p class="mb-2"><i class="fa fa-check-circle mr-2"></i>Instant emergency alerts to caregivers & medical professionals</p>
+                                                <p class="mb-3"><i class="fa fa-check-circle mr-2"></i>Enhanced early detection accuracy with positive evaluator feedback</p>
+                                                <div class="text-center">
+                                                    <span class="badge badge-light px-3 py-2" style="font-size: 1rem;">SIH 2023</span>
+                                                    <p class="mt-3 mb-0" style="font-size: 0.95rem; opacity: 0.9;"><strong>Tech:</strong> HTML5, CSS3, JavaScript, Sensor APIs, IoT Integration</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title text-danger">Cardio Care – Heart Monitoring & Emergency Alert Platform</h5>
-                                            <p class="card-text" style="font-size: 1.1rem;">An innovative health monitoring system with real-time heart rate tracking and emergency alert capabilities.</p>
-                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 class="text-danger mb-2" style="font-size: 1.5rem; font-weight: 600;">Cardio Care</h4>
+                                        <h5 class="mb-3" style="font-size: 1.3rem; color: #333;">Heart Monitoring & Emergency Alert Platform</h5>
+                                        <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">An innovative health monitoring system that saves lives through real-time cardiac tracking, intelligent anomaly detection, and instant emergency response. Successfully selected for Smart India Hackathon 2023.</p>
                                     </div>
                                 </div>
                             </div>
@@ -637,7 +653,7 @@
                         </div>
                         <div class="col-12">
                             <div class="contact-form">
-                                <form id="contactForm" action="mail/contact.php" method="POST">
+                                <form id="contactForm" action="https://formspree.io/f/xbjnkwbv" method="POST">
                                     <div class="form-row">
                                         <div class="control-group col-sm-6 mb-4">
                                             <input type="text" class="form-control p-4" id="name" name="name" placeholder="Your Name"

@@ -23,50 +23,35 @@ $(function () {
         $this.prop("disabled", true);
         $this.text("Sending...");
         
-        // Submit to PHP backend
+        // Submit directly to Formspree (works on static hosting like GitHub Pages)
         $.ajax({
-            url: "mail/contact.php",
+            url: "https://formspree.io/f/xbjnkwbv",
             type: "POST",
             data: {
                 name: name,
                 email: email,
                 subject: subject,
-                message: message
+                message: message,
+                _replyto: email,
+                _subject: "Portfolio Contact: " + subject
+            },
+            dataType: "json",
+            headers: {
+                'Accept': 'application/json'
             },
             success: function(response) {
-                showMessage("Thank you! Your message has been sent successfully to vadlaakhila122@gmail.com.", "success");
+                showMessage("Thank you " + name + "! Your message has been sent successfully to vadlaakhila122@gmail.com. I'll get back to you soon!", "success");
                 $('#contactForm')[0].reset();
+                $this.prop("disabled", false);
+                $this.text("Send Message");
             },
             error: function(xhr, status, error) {
-                // Fallback to Formspree if PHP fails (for static hosting)
-                $.ajax({
-                    url: "https://formspree.io/f/xbjnkwbv",
-                    type: "POST",
-                    data: {
-                        name: name,
-                        email: email,
-                        subject: subject,
-                        message: message,
-                        _replyto: email
-                    },
-                    dataType: "json",
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    success: function(response) {
-                        showMessage("Thank you! Your message has been sent successfully.", "success");
-                        $('#contactForm')[0].reset();
-                    },
-                    error: function() {
-                        showMessage("Sorry " + name + ", there was an error sending your message. Please email me directly at vadlaakhila122@gmail.com", "danger");
-                    }
-                });
-            },
-            complete: function() {
-                setTimeout(function() {
-                    $this.prop("disabled", false);
-                    $this.text("Send Message");
-                }, 1000);
+                // If Formspree fails, show helpful error with direct email option
+                var errorMsg = "Sorry " + name + ", there was an error sending your message. ";
+                errorMsg += "Please email me directly at <a href='mailto:vadlaakhila122@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message) + "'>vadlaakhila122@gmail.com</a>";
+                showMessage(errorMsg, "danger");
+                $this.prop("disabled", false);
+                $this.text("Send Message");
             }
         });
     });
@@ -79,8 +64,8 @@ $(function () {
     
     // Show message function
     function showMessage(message, type) {
-        $('#success').html("<div class='alert alert-" + type + "'>");
-        $('#success > .alert-' + type).html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>");
+        $('#success').html("<div class='alert alert-" + type + " alert-dismissible fade show'>");
+        $('#success > .alert-' + type).html("<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
         $('#success > .alert-' + type).append("<strong>" + message + "</strong>");
         $('#success > .alert-' + type).append('</div>');
         
